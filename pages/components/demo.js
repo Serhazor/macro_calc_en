@@ -2,17 +2,11 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import DenseTable from "./DenseTable";
 
 const useStyles = makeStyles((theme) => ({
   table: {
-    minWidth: 650,
+    minWidth: 650
   },
   root: {
     "& .MuiTextField-root": {
@@ -22,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+function createData(name, calories, fat, carbs) {
+  return { name, calories, fat, carbs };
+}
 
 export default function FormPropsTextFields() {
   const classes = useStyles();
@@ -39,18 +36,16 @@ export default function FormPropsTextFields() {
   const [sexValue, setSexValue] = useState(1);
   const [sexMultiplier, setSexMultiplier] = useState(0);
 
-
   const sexes = [
     {
       value: 1,
-      label: "Девочка"
+      label: "Женский"
     },
     {
       value: 2,
-      label: "Мальчик"
+      label: "Мужской"
     }
   ];
-
 
   const handleIntensityChange = (e) => {
     if (parseInt(e.target.value, 10) === 1) {
@@ -73,30 +68,40 @@ export default function FormPropsTextFields() {
     }
     if (parseInt(e.target.value, 10) === 2) setSexMultiplier(-5);
     setSexValue(e.target.value);
-  }
+  };
 
   const handleCheck = (e) => {
     e.preventDefault();
     const result =
       ((10 * parseInt(weigthValue, 10) || 0) +
         6.25 * parseInt(heightValue, 10) -
-        5 * parseInt(ageValue, 10) - (sexMultiplier)) *
+        5 * parseInt(ageValue, 10) -
+        sexMultiplier) *
       multiplier;
 
     setMaintainingWeigthCalories(parseInt(result));
 
-    const fatCal = ((weigthValue*fatValue));
-    setFatCal(parseInt(fatCal))
+    const fatCal = weigthValue * fatValue;
+    setFatCal(parseInt(fatCal));
 
-    const proCal = ((weigthValue*proteinValue));
-    setProCal(parseInt(proCal))
+    const proCal = weigthValue * proteinValue;
+    setProCal(parseInt(proCal));
 
-    const carbCal = ((result-((fatCal*9)+(proCal*4)))/4)
-    setCarbCal(parseInt(carbCal))
-
-    
+    const carbCal = (result - (fatCal * 9 + proCal * 4)) / 4;
+    setCarbCal(parseInt(carbCal));
   };
 
+  const rows = [
+    createData(
+      "Общая дневная норма калорий",
+      maintainingWeigthCalories,
+      (parseInt(maintainingWeigthCalories - (maintainingWeigthCalories * 0.1))),
+      (parseInt(maintainingWeigthCalories + (maintainingWeigthCalories * 0.1))),
+    ),
+    createData("Дневная норма Белков (в граммах)", proCal, (parseInt(proCal - (proCal * 0.1))), (parseInt(proCal + (proCal * 0.1)))),
+    createData("Дневная норма Жиров (в граммах)", fatCal, (parseInt(fatCal - (fatCal * 0.1))), (parseInt(fatCal + (fatCal * 0.1)))),
+    createData("Дневная норма Углеводов (в граммах)", carbCal,(parseInt(carbCal - (carbCal * 0.1))), (parseInt(carbCal + (carbCal * 0.1))))
+  ];
   return (
     <form
       className={classes.root}
@@ -115,9 +120,9 @@ export default function FormPropsTextFields() {
         5 - ваша работа связана с физическим трудом, вы тренируетесь 2 раза в
         день и включаете в программу тренировок силовые упражнения
       </div>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
       <div>
         <TextField
           id="sex-number"
@@ -136,8 +141,8 @@ export default function FormPropsTextFields() {
             </MenuItem>
           ))}
         </TextField>
-        </div>
-        <div>
+      </div>
+      <div>
         <TextField
           id="age-number"
           label="Ваш возраст"
@@ -149,8 +154,7 @@ export default function FormPropsTextFields() {
           onChange={(e) => {
             setAgeValue(e.target.value);
           }}
-      >
-      </TextField>
+        ></TextField>
         <TextField
           id="weight-number"
           label="Ваш вес"
@@ -215,74 +219,19 @@ export default function FormPropsTextFields() {
         <button type="submit">Посчитать</button>
       </div>
 
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
 
       <div>
-      Калораж для поддержания веса: {maintainingWeigthCalories}
-      </div>
-
-      <div>
-      Дневная норма белковых калорий: {proCal}
-      </div>
-
-      <div>
-      Дневная норма жировых калорий: {fatCal}
-      </div>
-
-      <div>
-      Дневная норма углеводных калорий: {carbCal}
-      </div>
-
-      <div>
-        <DenseTable/>
+        <DenseTable
+          rows={rows}
+          maintainingWeigthCalories={maintainingWeigthCalories}
+          proCal={proCal}
+          fatCal={fatCal}
+          carbCal={carbCal}
+        />
       </div>
     </form>
-
-    
   );
 }
-
-function createData(name, calories, fat, carbs) {
-  return { name, calories, fat, carbs};
-}
-
-const rows = [
-  createData('Calories', FormPropsTextFields.maintainingWeigthCalories, 6.0, 24, 4.0),
-  createData('Белки', FormPropsTextFields.proCal, 9.0, 37, 4.3),
-  createData('Жиры', FormPropsTextFields.fatCal, 16.0, 24, 6.0),
-  createData('Углеводы', FormPropsTextFields.carbCal, 3.7, 67, 4.3),
-];
-
-export function DenseTable() {
-  const classes = useStyles();
-
-  return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Ваши результаты</TableCell>
-            <TableCell align="center">Для поддержания веса</TableCell>
-            <TableCell align="center">Для похудения&nbsp;(-10%)</TableCell>
-            <TableCell align="center">Для набора веса&nbsp;(+10%)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="center">{row.calories}</TableCell>
-              <TableCell align="center">{row.fat}</TableCell>
-              <TableCell align="center">{row.carbs}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-}
-
