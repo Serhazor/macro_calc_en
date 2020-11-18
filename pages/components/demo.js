@@ -109,9 +109,7 @@ export default function FormPropsTextFields() {
       autoComplete="off"
       onSubmit={handleCheck}
     > <div>
-          <Text style={{flex: 1, flexWrap: 'wrap'}}>
           В разделе физической нагрузки выставьте соответствующую цифру
-          </Text>
       </div>
     <br/>
     <ul>
@@ -137,9 +135,7 @@ export default function FormPropsTextFields() {
       </ul>
       <br />
       <div>
-        <Text style={{flex: 1, flexWrap: 'wrap'}}>
         В разделе соотношений белка и жиры выбирайте соотношение которое вам рекомендовал диетолог/тренер.
-        </Text>
       </div>
       <div>
       Если вам порекомендовали выбрать 1.5 граммов белка на килограмм веса, то введите 1.5 в раздел белка.  
