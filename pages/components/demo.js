@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import DenseTable from "./DenseTable";
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -241,7 +242,11 @@ export default function FormPropsTextFields() {
             setFatValue(e.target.value);
           }}
         />
-        <button type="submit">Посчитать</button>
+      </div>
+      <div className={classes.root}>
+        <Button type="submit" variant="contained" color="secondary">
+          Посчитать
+        </Button>
       </div>
 
       <br />
