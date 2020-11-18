@@ -108,7 +108,7 @@ export default function FormPropsTextFields() {
       noValidate
       autoComplete="off"
       onSubmit={handleCheck}
-    >
+    > <div>В раздере физической нагрузки выставьте соответствующую цифру</div>
       <div>1 - нет физических нагрузок и сидячая работа</div>
       <div>
         2 - совершаете небольшие пробежки или делаете легкую гимнастику 1–3 раза
