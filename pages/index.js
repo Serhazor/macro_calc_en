@@ -10,12 +10,16 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>World's best macro calculator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-       <div>Добро пожаловать в ваш калькулятор макросов</div>
+       <div><h2>Добро пожаловать в ваш калькулятор макросов</h2></div>
+       <br/>
+       <div>Поверните телефон в горизонтальное положение</div>
+       <img src="/images/phoneRotate.png" alt="" />
+       
       </main>
       <Demo/>
 
