@@ -114,7 +114,7 @@ export default function FormPropsTextFields() {
           В разделе физической нагрузки выставьте соответствующую цифру
       </div>
     <br/>
-      <div>
+      <div >
         <ul>
           <li>
             1 - нет физических нагрузок и сидячая работа
@@ -149,7 +149,7 @@ export default function FormPropsTextFields() {
       
       <br />
       <br />
-      <div style={{alignSelf:"center"}}>
+      <div style={{margin:20}}>
         <TextField
           id="sex-number"
           select
@@ -168,7 +168,7 @@ export default function FormPropsTextFields() {
           ))}
         </TextField>
       </div>
-      <div>
+      <div style={{margin:20}}>
         <TextField
           id="age-number"
           label="Ваш возраст"
@@ -207,7 +207,7 @@ export default function FormPropsTextFields() {
         />
       </div>
 
-      <div>
+      <div style={{margin:20}}>
         <TextField
           id="intencity-number"
           label="Уровень физической активности"
@@ -243,8 +243,8 @@ export default function FormPropsTextFields() {
           }}
         />
       </div>
-      <div className={classes.root}>
-        <Button type="submit" variant="contained" color="secondary">
+      <div className={classes.root} style={{margin:20}} >
+        <Button type="submit" variant="contained" color="secondary" >
           Посчитать
         </Button>
       </div>
