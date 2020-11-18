@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Demo from './components/demo';
+import Results from './components/results';
     
 
 export default function Home() {
@@ -17,7 +18,9 @@ export default function Home() {
        <div>Добро пожаловать в ваш калькулятор макросов</div>
       </main>
       <Demo/>
-
+    <div>
+      <Results/>
+    </div>
 
 
       <footer className={styles.footer}>
