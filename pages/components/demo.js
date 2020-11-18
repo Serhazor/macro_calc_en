@@ -94,13 +94,13 @@ export default function FormPropsTextFields() {
   const rows = [
     createData(
       "Общая дневная норма калорий",
-      maintainingWeigthCalories,
+      (parseInt(maintainingWeigthCalories)),
       (parseInt(maintainingWeigthCalories - (maintainingWeigthCalories * 0.1))),
       (parseInt(maintainingWeigthCalories + (maintainingWeigthCalories * 0.1))),
     ),
-    createData("Дневная норма Белков (в граммах)", proCal, (parseInt(proCal - (proCal * 0.1))), (parseInt(proCal + (proCal * 0.1)))),
-    createData("Дневная норма Жиров (в граммах)", fatCal, (parseInt(fatCal - (fatCal * 0.1))), (parseInt(fatCal + (fatCal * 0.1)))),
-    createData("Дневная норма Углеводов (в граммах)", carbCal,(parseInt(carbCal - (carbCal * 0.1))), (parseInt(carbCal + (carbCal * 0.1))))
+    createData("Дневная норма Белков (в граммах)", (parseInt(proCal)), (parseInt(proCal - (proCal * 0.1))), (parseInt(proCal + (proCal * 0.1)))),
+    createData("Дневная норма Жиров (в граммах)", (parseInt(fatCal)), (parseInt(fatCal - (fatCal * 0.1))), (parseInt(fatCal + (fatCal * 0.1)))),
+    createData("Дневная норма Углеводов (в граммах)", (parseInt(carbCal)),(parseInt(carbCal - (carbCal * 0.1))), (parseInt(carbCal + (carbCal * 0.1))))
   ];
   return (
     <form

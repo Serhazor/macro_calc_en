@@ -17,7 +17,7 @@ export default function Home() {
 
       <main className={styles.main}>
       <img src="/images/asflogo.png" alt="" style={{maxHeight: 150}}/>
-       <div><h2>Добро пожаловать в ваш калькулятор макросов</h2></div>
+       <div><h2>Лучший в мире калькулятор макронутриенов от Alex Si Fitness</h2></div>
        <br/>
        <div>Поверните телефон в горизонтальное положение</div>
        <img src="/images/phoneRotate.png" alt="" />
@@ -27,7 +27,7 @@ export default function Home() {
 
 
       <footer className={styles.footer}>
-          Тут могла бы быть ваша реклама 
+          Все права пропиты или обменяны на углеводы.
       </footer>
     </div>
   )
