@@ -23,7 +23,7 @@ export default function Home() {
        <img src="/images/phoneRotate.png" alt="" />
        
       </main>
-      <Demo className={styles.container}></Demo>/>
+      <Demo className={styles.container}/>
 
 
       <footer className={styles.footer}>
