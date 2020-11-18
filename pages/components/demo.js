@@ -150,7 +150,7 @@ export default function FormPropsTextFields() {
       
       <br />
       <br />
-      <div className={styles.main}>
+      <div style={{margin:20}}>
         <TextField
           id="sex-number"
           select
@@ -169,7 +169,7 @@ export default function FormPropsTextFields() {
           ))}
         </TextField>
       </div>
-      <div className={styles.main}>
+      <div style={{margin:20}}>
         <TextField
           id="age-number"
           label="Ваш возраст"
@@ -208,7 +208,7 @@ export default function FormPropsTextFields() {
         />
       </div>
 
-      <div className={styles.main}>
+      <div style={{margin:20}}>
         <TextField
           id="intencity-number"
           label="Уровень физической активности"
@@ -244,7 +244,7 @@ export default function FormPropsTextFields() {
           }}
         />
       </div>
-      <div className={styles.main} style={{margin:20}} >
+      <div className={classes.root} style={{margin:20}} >
         <Button type="submit" variant="contained" color="secondary" >
           Посчитать
         </Button>
