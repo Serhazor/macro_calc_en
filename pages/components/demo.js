@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import DenseTable from "./DenseTable";
 import Button from '@material-ui/core/Button';
+import styles from '../../styles/Home.module.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -149,7 +150,7 @@ export default function FormPropsTextFields() {
       
       <br />
       <br />
-      <div style={{margin:20}}>
+      <div className={styles.main}>
         <TextField
           id="sex-number"
           select
@@ -168,7 +169,7 @@ export default function FormPropsTextFields() {
           ))}
         </TextField>
       </div>
-      <div style={{margin:20}}>
+      <div className={styles.main}>
         <TextField
           id="age-number"
           label="Ваш возраст"
@@ -207,7 +208,7 @@ export default function FormPropsTextFields() {
         />
       </div>
 
-      <div style={{margin:20}}>
+      <div className={styles.main}>
         <TextField
           id="intencity-number"
           label="Уровень физической активности"
@@ -243,7 +244,7 @@ export default function FormPropsTextFields() {
           }}
         />
       </div>
-      <div className={classes.root} style={{margin:20}} >
+      <div className={styles.main} style={{margin:20}} >
         <Button type="submit" variant="contained" color="secondary" >
           Посчитать
         </Button>
