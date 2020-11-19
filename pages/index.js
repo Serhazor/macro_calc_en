@@ -19,7 +19,7 @@ export default function Home() {
       <img src="/images/asflogo.png" alt="" style={{maxHeight: 250}}/>
        <div><h2>Лучший в мире калькулятор калорий и макронутриентов (КБЖУ) от Alex Si Fitness</h2></div>
        <br/>
-       <div>Поверните телефон в горизонтальное положение</div>
+       <div>Если вы зашли с телефона, то поверните его в горизонтальное положение</div>
        <img src="/images/phoneRotate.png" alt="" />
        
       </main>
