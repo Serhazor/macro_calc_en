@@ -111,42 +111,9 @@ export default function FormPropsTextFields() {
       noValidate
       autoComplete="off"
       onSubmit={handleCheck}
-    > <div style={{textAlign: "center"}}>
-          В разделе физической нагрузки выставьте соответствующую цифру
-      </div>
-    <br/>
-      <div >
-        <ul>
-          <li>
-            1 - нет физических нагрузок и сидячая работа
-          </li>
-          
-          <li>
-            2 - совершаете небольшие пробежки или делаете легкую гимнастику 1–3 раза в неделю
-          </li>
-          
-          <li>
-            3 - занимаетесь спортом со средними нагрузками 3–5 раз в неделю
-          </li>
-          
-          <li>
-            4 - полноценно тренируетесь 6–7 раз в неделю
-          </li>
-          
-          <li>  
-            5 - ваша работа связана с физическим трудом, вы тренируетесь 2 раза в день и включаете в программу тренировок силовые упражнения
-          </li>
-        </ul>
-        </div>
-
-      <br />
+    > <br />
       <div/>
-      <div style={{textAlign: "center"}}>
-        В разделе соотношений белка и жиры выбирайте соотношение которое вам рекомендовал диетолог/тренер.
-      </div>
-      <div style={{textAlign: "center"}}>
-      Если вам порекомендовали выбрать 1.5 граммов белка на килограмм веса, то введите 1.5 в раздел белка.  
-      </div>
+
       
       <br />
       <br />
@@ -172,7 +139,7 @@ export default function FormPropsTextFields() {
       <div style={{margin:20}}>
         <TextField
           id="age-number"
-          label="Ваш возраст"
+          label="Ваш возраст (15+)"
           type="number"
           value={ageValue}
           InputLabelProps={{
@@ -184,7 +151,7 @@ export default function FormPropsTextFields() {
         ></TextField>
         <TextField
           id="weight-number"
-          label="Ваш вес"
+          label="Ваш вес (кг)"
           type="number"
           value={weigthValue}
           InputLabelProps={{
@@ -196,7 +163,7 @@ export default function FormPropsTextFields() {
         />
         <TextField
           id="height-number"
-          label="Ваш рост"
+          label="Ваш рост (см)"
           type="number"
           value={heightValue}
           InputLabelProps={{
@@ -221,7 +188,7 @@ export default function FormPropsTextFields() {
         />
         <TextField
           id="protein-number"
-          label="Соотношение в котором расчитывать белок"
+          label="Количество Белка (г на кг веса тела)"
           type="float"
           value={proteinValue}
           InputLabelProps={{
@@ -233,7 +200,7 @@ export default function FormPropsTextFields() {
         />
         <TextField
           id="fat-number"
-          label="Соотношение в котором расчитывать жир"
+          label="Количество Жиров (г на кг веса тела)"
           type="float"
           value={fatValue}
           InputLabelProps={{
@@ -251,8 +218,42 @@ export default function FormPropsTextFields() {
       </div>
 
       <br />
-      <br />
-      <br />
+
+      <div style={{textAlign: "center"}}>
+          В разделе физической активности выставьте соответствующую цифру:
+      </div>
+    <br/>
+      <div >
+        <ul>
+          <li>
+            1 - низкая активность / нет регулярных физических нагрузок
+          </li>
+          
+          <li>
+            2 - довольно активны (ежедневно много приходится ходить, ездить на велосипеде, регулярная зарядка по утрам) ИЛИ тренировки средней интенсивности до 3 раз в неделю (не изнурительные силовые, HIIT, пилатес, йога, хайкинг) 
+          </li>
+          
+          <li>
+            3 - интенсивные тренировки 3-4 раза в неделю (силовые или кардио)
+          </li>
+          
+          <li>
+            4 - интенсивные тренировки 5-6 раз в неделю (силовые или кардио)
+          </li>
+          
+          <li>  
+            5 - ежедневные интенсивные тренировки (силовые или кардио, включая тяжелую атлетику и бег на длинные дистанции)
+          </li>
+        </ul>
+        </div>
+        <br />
+        <div style={{textAlign: "center"}}>
+            В разделе расчета количества Белка и Жиров выбирайте соотношение которое вам рекомендовал диетолог/тренер.
+        </div>
+        <div style={{textAlign: "center"}}>
+            Пример: если вам порекомендовали выбрать 1.5 граммов белка на килограмм веса, то введите 1.5 в раздел белка. 
+        </div>
+        <br />
 
       <div>
         <DenseTable

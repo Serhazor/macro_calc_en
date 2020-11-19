@@ -16,8 +16,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <img src="/images/asflogo.png" alt="" style={{maxHeight: 150}}/>
-       <div><h2>Лучший в мире калькулятор макронутриенов от Alex Si Fitness</h2></div>
+      <img src="/images/asflogo.png" alt="" style={{maxHeight: 250}}/>
+       <div><h2>Лучший в мире калькулятор калорий и макронутриентов (КБЖУ) от Alex Si Fitness</h2></div>
        <br/>
        <div>Поверните телефон в горизонтальное положение</div>
        <img src="/images/phoneRotate.png" alt="" />
