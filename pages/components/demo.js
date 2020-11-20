@@ -42,7 +42,7 @@ export default function FormPropsTextFields() {
   const sexes = [
     {
       value: 1,
-      label: "Нажми на меня"
+      label: <em>Нажми на меня</em>
     },
     {
       value: 2,
