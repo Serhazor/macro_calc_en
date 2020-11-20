@@ -98,12 +98,12 @@ export default function FormPropsTextFields() {
     createData(
       "Общая дневная норма калорий",
       (parseInt(maintainingWeigthCalories)),
-      (parseInt(maintainingWeigthCalories - (maintainingWeigthCalories * 0.1))),
-      (parseInt(maintainingWeigthCalories + (maintainingWeigthCalories * 0.1))),
+      (parseInt((proCal*4)+(fatCal*9)+(4*(carbCal-(carbCal*0.1))))),
+      (parseInt((proCal*4)+(fatCal*9)+(4*(carbCal-(carbCal*0.15))))),
     ),
-    createData("Дневная норма Белков (в граммах)", proCal, (parseInt(proCal - (proCal * 0.1))), (parseInt(proCal + (proCal * 0.1)))),
-    createData("Дневная норма Жиров (в граммах)", fatCal, (parseInt(fatCal - (fatCal * 0.1))), (parseInt(fatCal + (fatCal * 0.1)))),
-    createData("Дневная норма Углеводов (в граммах)", carbCal,(parseInt(carbCal - (carbCal * 0.1))), (parseInt(carbCal + (carbCal * 0.1))))
+    createData("Дневная норма Белков (в граммах)", proCal, (parseInt(proCal)), (parseInt(proCal))),
+    createData("Дневная норма Жиров (в граммах)", fatCal, (parseInt(fatCal)), (parseInt(fatCal))),
+    createData("Дневная норма Углеводов (в граммах)", carbCal,(parseInt(carbCal - (carbCal * 0.1))), (parseInt(carbCal - (carbCal * 0.15))))
   ];
   return (
     <form
@@ -251,7 +251,7 @@ export default function FormPropsTextFields() {
             В разделе расчета количества Белка и Жиров выбирайте соотношение которое вам рекомендовал диетолог/тренер.
         </div>
         <div style={{textAlign: "center"}}>
-            Пример: если вам порекомендовали выбрать 1.5 граммов белка на килограмм веса, то введите 1.5 в раздел белка. 
+          Пример: если вам порекомендовали выбрать 1.5 граммов белка на килограмм веса, то введите 1.5 в раздел белка. 
         </div>
         <br />
 

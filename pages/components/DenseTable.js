@@ -43,7 +43,7 @@ export default function DenseTable({
               <TableCell>Ваши результаты</TableCell>
               <TableCell align="center">Для поддержания веса</TableCell>
               <TableCell align="center">Для похудения&nbsp;(-10%)</TableCell>
-              <TableCell align="center">Для набора веса&nbsp;(+10%)</TableCell>
+              <TableCell align="center">Бешеная сушка&nbsp;(-15%)</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

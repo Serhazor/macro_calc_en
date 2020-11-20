@@ -27,7 +27,7 @@ export default function Home() {
 
 
       <footer className={styles.footer}>
-          Все права пропиты или обменяны на углеводы.
+          Все права проедены или обменяны на углеводы &copy; {new Date().getFullYear()}
       </footer>
     </div>
   )
