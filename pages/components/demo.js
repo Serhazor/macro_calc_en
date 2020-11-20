@@ -76,11 +76,8 @@ export default function FormPropsTextFields() {
   const handleCheck = (e) => {
     e.preventDefault();
     const result =
-      ((10 * parseInt(weigthValue, 10) || 0) +
-        6.25 * parseInt(heightValue, 10) -
-        5 * parseInt(ageValue, 10) -
-        sexMultiplier) *
-      multiplier;
+      //(((10 * weigthValue) + (6.25 * heightValue) - (5 * ageValue)) - (sexMultiplier)) * ();
+      (((10 * weigthValue) + (6.25 * heightValue) - (5 * ageValue)) - (sexMultiplier)) * (multiplier);
 
     setMaintainingWeigthCalories(parseInt(result));
 
@@ -90,7 +87,7 @@ export default function FormPropsTextFields() {
     const proCal = weigthValue * proteinValue;
     setProCal(parseInt(proCal));
 
-    const carbCal = (result - (fatCal * 9 + proCal * 4)) / 4;
+    const carbCal = (result-((proCal*4)+(fatCal*9)))/4;
     setCarbCal(parseInt(carbCal));
   };
 
@@ -98,8 +95,8 @@ export default function FormPropsTextFields() {
     createData(
       "Общая дневная норма калорий",
       (parseInt(maintainingWeigthCalories)),
-      (parseInt((proCal*4)+(fatCal*9)+(4*(carbCal-(carbCal*0.1))))),
-      (parseInt((proCal*4)+(fatCal*9)+(4*(carbCal-(carbCal*0.15))))),
+      (parseInt(maintainingWeigthCalories-(maintainingWeigthCalories*0.1))),
+      (parseInt(maintainingWeigthCalories-(maintainingWeigthCalories*0.15))),
     ),
     createData("Дневная норма Белков (в граммах)", proCal, (parseInt(proCal)), (parseInt(proCal))),
     createData("Дневная норма Жиров (в граммах)", fatCal, (parseInt(fatCal)), (parseInt(fatCal))),
