@@ -42,10 +42,14 @@ export default function FormPropsTextFields() {
   const sexes = [
     {
       value: 1,
-      label: "Женский"
+      label: "Нажми на меня"
     },
     {
       value: 2,
+      label: "Женский"
+    },    
+    {
+      value: 3,
       label: "Мужской"
     }
   ];
@@ -66,9 +70,9 @@ export default function FormPropsTextFields() {
   // Для женщин: (10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) − 161
 
   const handleSexChange = (e) => {
-    if (parseInt(e.target.value, 10) === 1) setSexMultiplier(161);
+    if (parseInt(e.target.value, 10) === 2) setSexMultiplier(161);
     setSexValue(e.target.value);
-    if (parseInt(e.target.value, 10) === 2) setSexMultiplier(-5);
+    if (parseInt(e.target.value, 10) === 3) setSexMultiplier(-5);
     setSexValue(e.target.value);
   };
 
