@@ -66,9 +66,8 @@ export default function FormPropsTextFields() {
   // Для женщин: (10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) − 161
 
   const handleSexChange = (e) => {
-    if (parseInt(e.target.value, 10) === 1) {
-      setSexMultiplier(161);
-    }
+    if (parseInt(e.target.value, 10) === 1) setSexMultiplier(161);
+    setSexValue(e.target.value);
     if (parseInt(e.target.value, 10) === 2) setSexMultiplier(-5);
     setSexValue(e.target.value);
   };
@@ -90,7 +89,7 @@ export default function FormPropsTextFields() {
     const carbCal = (result-((proCal*4)+(fatCal*9)))/4;
     setCarbCal(parseInt(carbCal));
   };
-
+//(((maintainingWeigthCalories-(maintainingWeigthCalories*0.1))-((fatCal*9)+(proCal*4)))/4)
   const rows = [
     createData(
       "Общая дневная норма калорий",
@@ -100,7 +99,7 @@ export default function FormPropsTextFields() {
     ),
     createData("Дневная норма Белков (в граммах)", proCal, (parseInt(proCal)), (parseInt(proCal))),
     createData("Дневная норма Жиров (в граммах)", fatCal, (parseInt(fatCal)), (parseInt(fatCal))),
-    createData("Дневная норма Углеводов (в граммах)", carbCal,(parseInt(carbCal - (carbCal * 0.1))), (parseInt(carbCal - (carbCal * 0.15))))
+    createData("Дневная норма Углеводов (в граммах)", carbCal,(parseInt((((maintainingWeigthCalories-(maintainingWeigthCalories*0.1))-((fatCal*9)+(proCal*4)))/4))), (parseInt((((maintainingWeigthCalories-(maintainingWeigthCalories*0.15))-((fatCal*9)+(proCal*4)))/4))))
   ];
   return (
     <form
