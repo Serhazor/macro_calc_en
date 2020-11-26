@@ -17,7 +17,7 @@ export default function Home() {
 
       <main className={styles.main}>
       <img src="/images/asflogo.png" alt="" style={{maxHeight: 250}}/>
-       <div><h2>Лучший в мире калькулятор калорий и макронутриентов (КБЖУ) от Alex Si Fitness</h2></div>
+       <div><h2>Лучший в мире калькулятор килокалорий и макронутриентов (КБЖУ)</h2></div>
        <br/>
        <div>Если вы зашли со смартфона, то поверните его в горизонтальное положение</div>
        <img src="/images/phoneRotate.png" alt="" />
@@ -26,7 +26,7 @@ export default function Home() {
       <Demo className={styles.container}/>
 
 
-      <footer className={styles.footer}>
+      <footer className={styles.footer} style={{fontSize: "small"}}>
           Все права проедены или обменяны на углеводы &copy; {new Date().getFullYear()}
       </footer>
     </div>
