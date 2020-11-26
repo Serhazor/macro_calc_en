@@ -96,7 +96,7 @@ export default function FormPropsTextFields() {
 //(((maintainingWeigthCalories-(maintainingWeigthCalories*0.1))-((fatCal*9)+(proCal*4)))/4)
   const rows = [
     createData(
-      "Общая дневная норма калорий",
+      "Общая дневная норма калорий (ккал)",
       (parseInt(maintainingWeigthCalories)),
       (parseInt(maintainingWeigthCalories-(maintainingWeigthCalories*0.1))),
       (parseInt(maintainingWeigthCalories-(maintainingWeigthCalories*0.15))),
