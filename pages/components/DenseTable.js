@@ -37,7 +37,7 @@ export default function DenseTable({
           className={classes.table}
           size="small"
           aria-label="a dense table"
-          style={{backgroundColor: "#ffe6ea"}}
+          style={{backgroundColor: "#FDF5F8"}}
         >
           <TableHead>
             <TableRow>
