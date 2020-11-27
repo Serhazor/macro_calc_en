@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <img src="/images/asflogo.png" alt="" style={{maxHeight: 250}}/>
+      <a href="https://www.alexsifitness.com/"><img src="/images/asflogo.png" alt="" style={{maxHeight: 250}}/></a>
        <div><h2>Лучший в мире калькулятор килокалорий и макронутриентов (КБЖУ)</h2></div>
        <br/>
        <div>Если вы зашли со смартфона, то поверните его в горизонтальное положение</div>
