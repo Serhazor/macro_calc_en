@@ -97,7 +97,10 @@ export default function FormPropsTextFields() {
     setCarbCal(parseInt(carbCal));
   };
 
+ 
   function handleSendData(){
+
+    //const mysql = require('serverless-mysql');
     
     const con = mysql.createConnection({
       host: process.env.MYSQL_HOST,
@@ -106,7 +109,7 @@ export default function FormPropsTextFields() {
       database: process.env.MYSQL_DATABASE
     });
   
-    const dataToBeSent = {
+    {/*const dataToBeSent = {
       sex: sexes.label,
       age: ageValue,
       weight: weigthValue,
@@ -114,9 +117,21 @@ export default function FormPropsTextFields() {
       intensity: intencityValue,
       protein: proteinValue,
       fat: fatValue,
-    };
+    };*/}
 
-    con.query('INSERT INTO runforme_macros SET ?' + dataToBeSent)
+    con.connect(function(err) {
+      if (err) throw err;
+      //console.log("Connected!");
+      var sql = "INSERT INTO macros_stats (sex, age, weight, height, intensity, protein, fat) VALUES ?";
+      var values = [
+        [sexes.label, ageValue, weigthValue, heightValue, intencityValue, proteinValue, fatValue],
+      ];
+      con.query(sql, [values], function (err, results) {
+        if (err) throw err;
+        //console.log("Number of records inserted: " + result.affectedRows);
+      });
+    });
+    
 
   };
 
