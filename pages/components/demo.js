@@ -5,6 +5,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 import DenseTable from "./DenseTable";
 import Button from '@material-ui/core/Button';
 import styles from '../../styles/Home.module.css';
+import { sendData } from "next/dist/next-server/server/api-utils";
+//import mysql from 'mysql';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -93,7 +96,30 @@ export default function FormPropsTextFields() {
     const carbCal = (result-((proCal*4)+(fatCal*9)))/4;
     setCarbCal(parseInt(carbCal));
   };
-//(((maintainingWeigthCalories-(maintainingWeigthCalories*0.1))-((fatCal*9)+(proCal*4)))/4)
+
+  function handleSendData(){
+    
+    const con = mysql.createConnection({
+      host: process.env.MYSQL_HOST,
+      user: process.env.MYSQL_USERNAME,
+      password: process.env.MYSQL_PASSWORD,
+      database: process.env.MYSQL_DATABASE
+    });
+  
+    const dataToBeSent = {
+      sex: sexes.label,
+      age: ageValue,
+      weight: weigthValue,
+      height: heightValue,
+      intensity: intencityValue,
+      protein: proteinValue,
+      fat: fatValue,
+    };
+
+    con.query('INSERT INTO runforme_macros SET ?' + dataToBeSent)
+
+  };
+
   const rows = [
     createData(
       "Общая дневная норма калорий (ккал)",
