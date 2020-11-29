@@ -10,7 +10,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-      {/*<meta name="viewport" content="width=device-width; initial-scale=1.0"/>*/}
+      <meta
+          name="viewport"
+          content="width=device-width,minimum-scale=0.5,initial-scale=1"
+        />
         <title>World's best macro calculator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
