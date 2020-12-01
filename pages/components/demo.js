@@ -149,7 +149,8 @@ export default function FormPropsTextFields() {
   ];
   return (
     <form
-      className={classes.root}
+      //{/*className={classes.root}*/}
+      className={styles.grid}
       noValidate
       autoComplete="off"
       onSubmit={handleCheck}

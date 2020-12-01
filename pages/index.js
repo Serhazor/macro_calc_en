@@ -10,26 +10,19 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-      <meta
-          name="viewport"
-          content="width=device-width,minimum-scale=0.5,initial-scale=1"
-        />
         <title>World's best macro calculator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.grid}>
       <a href="https://www.alexsifitness.com/"><img src="/images/asflogo.png" alt="" style={{maxHeight: 150}}/></a>
        <div><h2>Лучший в мире калькулятор килокалорий и макронутриентов (КБЖУ)</h2></div>
-       <br/>
-       <div>Если вы зашли со смартфона, то поверните его в горизонтальное положение</div>
-       <img src="/images/phoneRotate.png" alt="" />
-       
+       <br/>       
       </main>
       <Demo className={styles.container}/>
 
 
-      <footer className={styles.footer} style={{fontSize: "small"}}>
+      <footer className={styles.grid} style={{fontSize: "small"}}>
           Все права проедены или обменяны на углеводы &copy; {new Date().getFullYear()}
       </footer>
     </div>
