@@ -16,14 +16,14 @@ export default function Home() {
 
       <main className={styles.grid}>
       <a href="https://www.alexsifitness.com/"><img src="/images/asflogo.png" alt="" style={{maxHeight: 150}}/></a>
-       <div><h2>Лучший в мире калькулятор килокалорий и макронутриентов (КБЖУ)</h2></div>
+       <div className={styles.grid}><h2>World's best macronutrient calculator</h2></div>
        <br/>       
       </main>
       <Demo className={styles.container}/>
 
 
       <footer className={styles.grid} style={{fontSize: "small"}}>
-          Все права проедены или обменяны на углеводы &copy; {new Date().getFullYear()}
+          All rights were exchanged to carbohydrates &copy; {new Date().getFullYear()}
       </footer>
     </div>
   )

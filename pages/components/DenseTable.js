@@ -41,10 +41,10 @@ export default function DenseTable({
         >
           <TableHead>
             <TableRow>
-              <TableCell>Ваши результаты</TableCell>
-              <TableCell align="center">Для поддержания веса</TableCell>
-              <TableCell align="center">Для похудения&nbsp;(нет ожирения; дефицит 10%)</TableCell>
-              <TableCell align="center">Для похудения&nbsp;(ожирение 1, 2 или 3 степени; дефицит 15%)</TableCell>
+              <TableCell>Your results</TableCell>
+              <TableCell align="center">To maintain weigth</TableCell>
+              <TableCell align="center">To loose weigth&nbsp;(not obese; deficit 10%)</TableCell>
+              <TableCell align="center">To loose weigth&nbsp;(1, 2 or 3 stage f obesity; deficit 15%)</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

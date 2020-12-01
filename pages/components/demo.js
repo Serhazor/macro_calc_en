@@ -46,15 +46,15 @@ export default function FormPropsTextFields() {
   const sexes = [
     {
       value: 1,
-      label: <em>Нажми на меня</em>
+      label: <em>Tap me</em>
     },
     {
       value: 2,
-      label: "Женский"
+      label: "Female"
     },    
     {
       value: 3,
-      label: "Мужской"
+      label: "Male"
     }
   ];
 
@@ -138,14 +138,14 @@ export default function FormPropsTextFields() {
 
   const rows = [
     createData(
-      "Общая дневная норма калорий (ккал)",
+      "Daily calorie limit (kcal)",
       (parseInt(maintainingWeigthCalories)),
       (parseInt(maintainingWeigthCalories-(maintainingWeigthCalories*0.1))),
       (parseInt(maintainingWeigthCalories-(maintainingWeigthCalories*0.15))),
     ),
-    createData("Дневная норма Белков (в граммах)", proCal, (parseInt(proCal)), (parseInt(proCal))),
-    createData("Дневная норма Жиров (в граммах)", fatCal, (parseInt(fatCal)), (parseInt(fatCal))),
-    createData("Дневная норма Углеводов (в граммах)", carbCal,(parseInt((((maintainingWeigthCalories-(maintainingWeigthCalories*0.1))-((fatCal*9)+(proCal*4)))/4))), (parseInt((((maintainingWeigthCalories-(maintainingWeigthCalories*0.15))-((fatCal*9)+(proCal*4)))/4))))
+    createData("Daily Protein limit (gramms)", proCal, (parseInt(proCal)), (parseInt(proCal))),
+    createData("Daily Fats limit (gramms)", fatCal, (parseInt(fatCal)), (parseInt(fatCal))),
+    createData("Daily Carbohydrate limit (gramms)", carbCal,(parseInt((((maintainingWeigthCalories-(maintainingWeigthCalories*0.1))-((fatCal*9)+(proCal*4)))/4))), (parseInt((((maintainingWeigthCalories-(maintainingWeigthCalories*0.15))-((fatCal*9)+(proCal*4)))/4))))
   ];
   return (
     <form
@@ -160,7 +160,7 @@ export default function FormPropsTextFields() {
         <TextField
           id="sex-number"
           select
-          label="Ваш пол"
+          label="Your sex"
           type="number"
           value={sexValue}
           InputLabelProps={{
@@ -178,7 +178,7 @@ export default function FormPropsTextFields() {
       <div style={{margin:20}}>
         <TextField
           id="age-number"
-          label="Ваш возраст (15+)"
+          label="Your age (15+)"
           type="number"
           value={ageValue}
           InputLabelProps={{
@@ -190,7 +190,7 @@ export default function FormPropsTextFields() {
         ></TextField>
         <TextField
           id="weight-number"
-          label="Ваш вес (кг)"
+          label="Your weight (kg)"
           type="number"
           value={weigthValue}
           InputLabelProps={{
@@ -202,7 +202,7 @@ export default function FormPropsTextFields() {
         />
         <TextField
           id="height-number"
-          label="Ваш рост (см)"
+          label="Your height (cm)"
           type="number"
           value={heightValue}
           min={1.0}
@@ -218,7 +218,7 @@ export default function FormPropsTextFields() {
       <div style={{margin:20}}>
         <TextField
           id="intencity-number"
-          label="Уровень физической активности"
+          label="Your activity level"
           type="number"
           value={intencityValue}
           InputLabelProps={{
@@ -228,7 +228,7 @@ export default function FormPropsTextFields() {
         />
         <TextField
           id="protein-number"
-          label="Количество Белка (г на кг веса тела)"
+          label="Protein value (gr per kg of current weight)"
           type="float"
           value={proteinValue}
           InputLabelProps={{
@@ -240,7 +240,7 @@ export default function FormPropsTextFields() {
         />
         <TextField
           id="fat-number"
-          label="Количество Жиров (г на кг веса тела)"
+          label="Fat value (gr per kg of current weight)"
           type="float"
           value={fatValue}
           InputLabelProps={{
@@ -253,57 +253,57 @@ export default function FormPropsTextFields() {
       </div>
       <div className={classes.root} style={{margin:20}} >
         <Button type="submit" variant="contained" color="secondary" >
-          Посчитать
+          Calculate
         </Button>
       </div>
       <br />
       <div>
-          <b>В разделе физической активности выставьте соответствующую цифру:</b>
+          <b>Enter one of the following numbers in to "Activity level" field:</b>
       </div>
       <div >
         <ul style={{fontSize: "small"}}>
-          <li><b>1</b> - низкая активность / нет регулярных физических нагрузок</li>
-          <li><b>2</b> - довольно активны (ежедневно много приходится ходить, ездить на велосипеде, регулярная зарядка по утрам) ИЛИ тренировки средней интенсивности до 3 раз в неделю (не изнурительные силовые, HIIT, пилатес, йога, хайкинг) </li>
-          <li><b>3</b> - интенсивные тренировки 3-4 раза в неделю (силовые или кардио)</li>
-          <li><b>4</b> - интенсивные тренировки 5-6 раз в неделю (силовые или кардио)</li>
-          <li><b>5</b> - ежедневные интенсивные тренировки (силовые или кардио, включая тяжелую атлетику и бег на длинные дистанции)</li>
+          <li><b>1</b> - activity is low/no regular physica excercises</li>
+          <li><b>2</b> - fairly active (daily walks, cycling, morning excercises) OR moderate incencity training sessions 3 times a week</li>
+          <li><b>3</b> - Intensive training sessions 3-4 times a week (strenght or Cardio)</li>
+          <li><b>4</b> - Intensive training sessions 5-6 times a week (strenght or Cardio)</li>
+          <li><b>5</b> - Daily intensive training sessions (Strength or cardio, including olympic weightlifting and long distance running)</li>
         </ul>
         </div>
         <div style={{textAlign: "left"}}>
-        <h4>Соотношение Белка и Жиров выбирайте по рекомендации вашего тренера/диетолога либо следуйте рекомендациям ниже:</h4>
+        <h4>Protein and Fat ration should be recommended by your coach/dietician, but you can also use the following recommendations:</h4>
         </div>
         <div>
-          <b>Сколько Белка (грамм на кг веса тела) выбрать для расчета:</b>
+          <b>How much Protein to use for the calculation (gramms per kilogramm of body weight):</b>
         </div>
         <div>
           <ul style={{fontSize: "small"}}>
-            <li>Ваш образ жизни - малоподвижный; из тренировок только йога или стретчинг: <b>1 - 1.1</b> г/кг</li>
-            <li>Вы регулярно тренируетесь на мышечную выносливость: <b>1.2 - 1.4</b> г/кг</li>
-            <li>Вы регулярно тренируетесь на рост мышечной силы: <b>1.5 - 1.7</b> г/кг</li>
-            <li>Вы регулярно тренируетесь на рост мышечной массы: <b>1.8 - 2.2</b> г/кг</li>
-            <li>Вы находитесь на дефиците калорий и хотите сохранить мышечную массу: <b>2.3 - 2.4</b> г/кг</li>
-            <li>Сомневаетесь что выбрать, при этом регулярно тренируетесь: <b>1.5</b> г/кг</li>
+            <li>You lifestyle is mainly static; you do some yoga or stretching: <b>1 - 1.1</b> gr/kg</li>
+            <li>You're regulary training to build muscular endurance: <b>1.2 - 1.4</b> gr/kg</li>
+            <li>You're regulare training to build muscular strength: <b>1.5 - 1.7</b> gr/kg</li>
+            <li>You're regulare training to build muscular mass: <b>1.8 - 2.2</b> gr/kg</li>
+            <li>You're in calorie deficite and you want to maintain muscle mass: <b>2.3 - 2.4</b> gr/kg</li>
+            <li>Don't know what to choose and you traing regulary: <b>1.5</b> gr/kg</li>
           </ul>
         </div>
         <div style={{textAlign: "left"}}>
-        <b>Сколько Жиров (грамм на кг веса тела) выбрать для расчета:</b>
+        <b>How much Fat to use for the calculation (gramms per kilogramm of body weight):</b>
         </div>
           <div>
             <ul style={{fontSize: "small"}}>
-              <li>У вас много лишнего веса: <b>0.9</b> г/кг</li>
-              <li>Вы в нормальном весе или есть немного лишнего: <b>1 - 1.2</b> г/кг</li>
-              <li>Вы в нормальном весе или есть немного лишнего, но тянет на сладкое: <b>1.3 - 1.5</b> г/кг</li>
-              <li>Сомневаетесь что выбрать: <b>1.2</b> г/кг</li>
+              <li>You you fairly overweight: <b>0.9</b> gr/kg</li>
+              <li>You have a bit of extra weight but close to normal weight: <b>1 - 1.2</b> gr/kg</li>
+              <li>You have a bit of extra weight but close to normal weight and also have craiving for something sweet: <b>1.3 - 1.5</b> gr/kg</li>
+              <li>Not sure what to choose: <b>1.2</b> gr/kg</li>
             </ul>
           </div>
         <div style={{textAlign: "left"}}>
-          Примечание: Если ваш тренер или диетолог посоветовал Жиров меньше 0.9 г на кг, срочно меняйте специалиста! 
+          Note: If your coach or dietisian is recommending you to eat less the 0.9gr/kg of Fat, you need to change the specialist ASAP!
         </div>
         <br />
         <br />
 
         <div style={{textAlign:"center"}}>
-          <h3>Таблица результатов</h3>
+          <h3>Results</h3>
         </div>
 
 
